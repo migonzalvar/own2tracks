@@ -22,7 +22,7 @@ def on_message(client, userdata, msg):
     topic = msg.topic
     payload = msg.payload
 
-    print topic, payload
+    print(topic, payload)
 
 # The callback for when Mosquitto logs something
 
@@ -35,7 +35,7 @@ device = os.getenv("OWNTRACKS_DEVICE")
 token = os.getenv("OWNTRACKS_TOKEN")
 
 if username is None or device is None or token is None:
-    print "I need $OWNTRACKS_USERNAME, $OWNTRACKS_DEVICE, and $OWNTRACKS_TOKEN"
+    print("I need $OWNTRACKS_USERNAME, $OWNTRACKS_DEVICE, and $OWNTRACKS_TOKEN")
     sys.exit(1)
 
 clientid = "%s-%s-py-%d" % (username, device, os.getpid())
